@@ -1,0 +1,27 @@
+[
+    {
+      "bookId":1,
+      "category":"science",
+      "price":500
+    },
+    {
+      "bookId":5,
+      "category":"science",
+      "price":500
+    },
+    {
+      "bookId":4,
+      "category":"science",
+      "price":500
+    },
+    {
+      "bookId":2,
+      "category":"science",
+      "price":500
+    },
+    {
+      "bookId":2,
+      "category":"science",
+      "price":500
+    }
+  ]

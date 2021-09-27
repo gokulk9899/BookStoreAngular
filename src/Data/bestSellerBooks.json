@@ -1,0 +1,57 @@
+[
+  {
+    "bookId": 5,
+    "bookTitle": "book2",
+    "authorName": "author2",
+    "category": "fiction",
+    "details": "unknnown",
+    "price": 10,
+    "rating": null,
+    "image": "string.jpg",
+    "uploadTime": "2021-09-23T11:13:58.6893623"
+  },
+  {
+    "bookId": 4,
+    "bookTitle": "Book1",
+    "authorName": "Author1",
+    "category": "horror",
+    "details": "unknown",
+    "price": 40,
+    "rating": null,
+    "image": "string.jpg",
+    "uploadTime": "2021-09-23T02:03:20.5383509"
+  },
+  {
+    "bookId": 2,
+    "bookTitle": "Microservices",
+    "authorName": "mosh",
+    "category": "programming",
+    "details": "book",
+    "price": 90,
+    "rating": 3,
+    "image": "image.jpg",
+    "uploadTime": "2021-09-22T18:32:10.279"
+  },
+  {
+    "bookId": 1,
+    "bookTitle": "harrypotter",
+    "authorName": "jk rowling",
+    "category": "fiction",
+    "details": "good bbok",
+    "price": 120,
+    "rating": 4,
+    "image": "image.jpg",
+    "uploadTime": "2021-09-22T18:32:10.279"
+  },
+  {
+    "bookId": 3,
+    "bookTitle": "Naruto",
+    "authorName": "Kishimoto",
+    "category": "comics",
+    "details": "lifeLesson",
+    "price": 500,
+    "rating": 5,
+    "image": "rasengan.jpg",
+    "uploadTime": "2021-09-22T19:39:13.746"
+  }
+]

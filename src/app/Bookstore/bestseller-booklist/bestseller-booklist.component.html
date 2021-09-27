@@ -1,0 +1,11 @@
+<div class="card bg-dark" style="color:white; font-size: large;">
+    <div class="card-body text-center">
+      Best Sellers
+    </div>
+</div>
+
+<div class="row">
+  <div *ngFor="let book of BestBookList" class="shawdow-lg col-sm-2 p-4">   
+    <app-book-card [book_name]="book"></app-book-card>
+  </div>
+</div>

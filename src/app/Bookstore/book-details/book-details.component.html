@@ -1,0 +1,59 @@
+
+<div class="row">
+    <div class="col-sm-4">
+        <div class="card" style="height: 16rem;">
+            <img  src="assets\Images\bookFrontPage.jpg" class="card-img-top overflow-hidden" style="height: 18rem;"  alt="..."  >
+        </div>
+        <div class="p-3 mb-3">
+          <h1><p><strong>Price: </strong>{{data.price}}</p></h1>
+        </div>
+    </div>
+    
+    
+
+    <div class="col-sm-8 p-3 mt-0 mb-3 ">
+      <h1><strong>{{data.bookTitle}}</strong></h1>
+      <div class="row">
+        <div class="col-sm-6">
+          <h3><p><strong>Book category:</strong></p></h3>
+        </div>
+        <div class="col-sm-6">
+          <h3><p>{{data.category}}</p></h3>
+        </div>
+        <div class="container">
+          <h3><p><strong>Details:</strong></p></h3>        
+          <p>{{data.details}}</p>     
+        </div>
+        <div class="col-sm-6">
+          <p><strong>Auhtor Name:</strong></p>
+        </div>
+        <div class="col-sm-6">
+          <p>{{data.authorName}}</p>
+        </div>
+
+        <div class="container">
+          <button type="button" class="btn btn-success mt-5 mr-3">Buy now</button>
+          <button type="button" class="btn btn-warning mt-5 mr-3">Add to cart</button>
+        </div>
+
+      </div>
+        
+
+    </div>
+</div>
+
+
+<!--   
+<div>
+  
+    <div class="card" style="width: 50px; height: 50px;" >
+        <img  src="assets\Images\bookFrontPage.jpg" class="card-img-top"  alt="..." >
+        <div class="card-body p-1">
+        <p class="card-text">{{data.bookId}}</p>
+        <p class="card-text">{{data.category}}</p>
+        <p class="card-text">{{data.price}}</p>
+      </div>
+    </div>
+</div>
+
+-->
