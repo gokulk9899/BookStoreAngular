@@ -20,11 +20,15 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatDialogModule } from '@angular/material/dialog';
+import {MatTableModule} from '@angular/material/table';
 import { LoginComponent } from './NavBar/login/login.component';
 import { SignUpComponent } from './NavBar/sign-up/sign-up.component';
-import { CartComponent } from './NavBar/cart/cart.component';
+import { CartComponent } from './Cart/cart/cart.component';
 import { UploadBookComponent } from './NavBar/upload-book/upload-book.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UserCartService } from './Cart/services/user-cart.service';
+import { SearchResultsComponent } from './NavBar/search-results/search-results.component';
+
 
 
 
@@ -42,7 +46,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     LoginComponent,
     SignUpComponent,
     CartComponent,
-    UploadBookComponent
+    UploadBookComponent,
+    SearchResultsComponent
   ],
   imports: [
     BrowserModule,
@@ -50,6 +55,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HttpClientModule,
     BrowserAnimationsModule,
     MatInputModule,
+    MatTableModule,
     MatButtonModule,
     MatCardModule,
     MatFormFieldModule,
@@ -61,7 +67,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     BookDetailsComponent
   ], 
   providers: [
-    BookDisplayService
+    BookDisplayService,
+    UserCartService
   ],
   bootstrap: [AppComponent]
 })

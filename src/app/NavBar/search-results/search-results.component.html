@@ -1,0 +1,10 @@
+
+<div class="container">
+<h1>Search results</h1>
+<div class="row">
+    <div *ngFor="let book of MatchBookList" class="shawdow-lg col-sm-2 p-4">   
+      <app-book-card [book_name]="book"></app-book-card>
+      <h2>{{book.bookTitle}}</h2>
+    </div>
+  </div>
+</div>

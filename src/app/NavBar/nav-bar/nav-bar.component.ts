@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
-import { CartComponent } from '../cart/cart.component';
+import { CartComponent } from '../../Cart/cart/cart.component';
 import { LoginComponent } from '../login/login.component';
 import { SignUpComponent } from '../sign-up/sign-up.component';
 import { UploadBookComponent } from '../upload-book/upload-book.component';
@@ -12,8 +13,10 @@ import { UploadBookComponent } from '../upload-book/upload-book.component';
 })
 export class NavBarComponent implements OnInit {
 
+  @ViewChild('Search')
+  searchBook!:NgForm;
+
   constructor(
-    private cartDialogBox:MatDialog,
     private loginDialogBox:MatDialog,
     private signUpDialogBox:MatDialog,
     private uploadBookDialogBox:MatDialog
@@ -22,13 +25,11 @@ export class NavBarComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  openCartBox(){
-    console.log("Working cart");
-    const cartDialogBoxConfig = new MatDialogConfig();
-    cartDialogBoxConfig.width = '600px';
-    cartDialogBoxConfig.height = '400px';
-    this.cartDialogBox.open(CartComponent,cartDialogBoxConfig);
+  onSubmit(){
+    console.log(this.searchBook);
   }
+
+  
 
   openLoginBox(){
     console.log("Login Working");

@@ -1,0 +1,11 @@
+table {
+    width: 100%;
+    height: 100%;
+  }
+
+  th.mat-header-cell,td.mat-cell {
+    text-align: center !important;
+  }
+.BuyNowBtn{
+    margin-right: 30pt;
+}

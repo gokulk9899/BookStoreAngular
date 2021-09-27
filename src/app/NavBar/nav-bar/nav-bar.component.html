@@ -25,15 +25,15 @@
           </li>
          
         <li>
-        <form class="d-flex">
-          <input class="form-control me-2" style="width:430px" type="search" placeholder="Enter Book or Author Name" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
+        <form (ngSubmit)='(onSubmit())' #Search="ngForm" class="d-flex">
+          <input class="form-control me-2" style="width:430px" ngModel name="search" type="search" placeholder="Enter Book or Author Name" aria-label="Search" required>
+          <button [disabled]="!Search.valid" class="btn btn-outline-success" type="submit"routerLink='/searchResults' >Search</button>
         </form>
         </li>
       </ul>
         <form class="d-flex">
           <button type="button" class="btn btn-link m-3 text-decoration-none" (click)="openUploadBox()">Upload</button>
-          <button class="btn btn-sm btn-outline-secondary m-3" type="button" (click)="openCartBox()">Cart</button>
+          <button class="btn btn-sm btn-outline-secondary m-3" type="button" routerLink="/addCart">Cart</button>
           <button class="btn btn-sm btn-outline-secondary m-3" type="button" (click)="openLoginBox()">Login</button>
           <button class="btn btn-sm btn-outline-secondary m-3" type="button" (click)="openSignUpBox()">SignUp</button>
         </form>
