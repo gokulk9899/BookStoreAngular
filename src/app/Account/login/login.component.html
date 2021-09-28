@@ -5,8 +5,8 @@
     <div class="card-body">
         <form (ngSubmit)='onSubmit()' #Form = "ngForm">
             <div class="form-group col-12">
-                <label for="email">Email</label>
-                <input type="email" class="form-control" ngModel name="userEmail" required>
+                <label for="text">User Name</label>
+                <input type="text" class="form-control" ngModel name="userName" required>
             </div>
 
             <div class="form-group col-12">
@@ -15,7 +15,7 @@
             </div>
 
             <div class="form-group col-12">
-                <button [disabled]="!Form.valid" type="submit" class="btn btn-primary">Login</button>
+                <button [disabled]="!Form.valid" type="submit" class="btn btn-primary" mat-dialog-close>Login</button>
             </div>
         </form>
     </div>

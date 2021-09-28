@@ -1,8 +1,10 @@
 export interface ICart{
     userId:number,
     bookId:number,
-    bookName:string,
+    bookTitle:string,
     quantity:number,
     price:number
 }
+
+
 

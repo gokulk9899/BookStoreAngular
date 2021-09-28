@@ -2,9 +2,10 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { CartComponent } from '../../Cart/cart/cart.component';
-import { LoginComponent } from '../login/login.component';
-import { SignUpComponent } from '../sign-up/sign-up.component';
+import { LoginComponent } from '../../Account/login/login.component';
+import { SignUpComponent } from '../../Account/sign-up/sign-up.component';
 import { UploadBookComponent } from '../upload-book/upload-book.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav-bar',
@@ -19,7 +20,8 @@ export class NavBarComponent implements OnInit {
   constructor(
     private loginDialogBox:MatDialog,
     private signUpDialogBox:MatDialog,
-    private uploadBookDialogBox:MatDialog
+    private uploadBookDialogBox:MatDialog,
+    private route:Router
     ) { }
 
   ngOnInit(): void {
@@ -29,7 +31,19 @@ export class NavBarComponent implements OnInit {
     console.log(this.searchBook);
   }
 
+  loggedInUserName:any;
   
+  loggedIn(){
+    
+    this.loggedInUserName = localStorage.getItem('userName');
+    return localStorage.getItem('token');  
+
+  }  
+
+  logoutUser(){
+    localStorage.removeItem('token');
+    this.route.navigate(['/']);
+  }
 
   openLoginBox(){
     console.log("Login Working");

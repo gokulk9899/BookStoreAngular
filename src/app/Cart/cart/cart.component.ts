@@ -13,10 +13,12 @@ export class CartComponent implements OnInit {
 
   cartTable : Array<ICart>=[];
 
+  userName:any = localStorage.getItem('userName');
+
   constructor(private orderDisplay:UserCartService) { }
 
   ngOnInit(): void {
-    this.orderDisplay.getOrdersById().subscribe(
+    this.orderDisplay.getOrders().subscribe(
       data=>{
         console.log(data);
         console.log(data.values);
@@ -28,5 +30,20 @@ export class CartComponent implements OnInit {
   }
 
   displayedColumns:string[]=["Book Id","Book name","Quantity","Price","SubTotal","actions"];
+
+  onEdit(){
+    console.log("edited")
+
+  }
+
+  onDelete(){
+    console.log("deleted")
+
+  }
+
+  onBuy(){
+    console.log("buyed")
+
+  }
 
 }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { IBook } from 'src/app/Models/IBook.interface';
+import { BookDisplayService } from '../services/book-display.service';
 
 @Component({
   selector: 'app-trending-booklist',
@@ -7,27 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TrendingBooklistComponent implements OnInit {
 
-  TrendBookList:Array<any>=[
-    {
-      "bookId":1,
-      "category":"science",
-      "price":500,
-    },
-    {
-      "bookId":1,
-      "category":"science",
-      "price":500,
-    },
-    {
-      "bookId":1,
-      "category":"science",
-      "price":500,
-    }    
-  ]
+  TrendBookList:Array<IBook>=[]
 
-  constructor() { }
+  constructor(private bookDisplay:BookDisplayService) { }
 
   ngOnInit(): void {
+    this.bookDisplay.getTrendingBooks().subscribe(
+      data=>{
+        this.TrendBookList = data;
+      },error=>{
+        console.log(error);
+      }
+    );
   }
 
 }

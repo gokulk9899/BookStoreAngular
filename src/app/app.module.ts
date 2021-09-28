@@ -21,13 +21,16 @@ import {MatCardModule} from '@angular/material/card';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatDialogModule } from '@angular/material/dialog';
 import {MatTableModule} from '@angular/material/table';
-import { LoginComponent } from './NavBar/login/login.component';
-import { SignUpComponent } from './NavBar/sign-up/sign-up.component';
+import { LoginComponent } from './Account/login/login.component';
+import { SignUpComponent } from './Account/sign-up/sign-up.component';
 import { CartComponent } from './Cart/cart/cart.component';
 import { UploadBookComponent } from './NavBar/upload-book/upload-book.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserCartService } from './Cart/services/user-cart.service';
+import { AccountService } from './Account/services/account.service';
 import { SearchResultsComponent } from './NavBar/search-results/search-results.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+
 
 
 
@@ -61,14 +64,17 @@ import { SearchResultsComponent } from './NavBar/search-results/search-results.c
     MatFormFieldModule,
     MatDialogModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSnackBarModule,
   ],
   entryComponents:[
     BookDetailsComponent
   ], 
   providers: [
     BookDisplayService,
-    UserCartService
+    UserCartService,
+    AccountService,
+    NavBarComponent
   ],
   bootstrap: [AppComponent]
 })

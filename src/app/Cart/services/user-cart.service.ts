@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ICart } from 'src/app/Models/ICart.interface';
 import { map } from 'rxjs/operators';
@@ -12,9 +12,16 @@ export class UserCartService {
 
   
 
-  getOrdersById(){
-    return this.http.get('Data/cartorders.json')
-    //return this.http.get('https://localhost:44336/api/Book/GetBestSellerBooks')
+  getOrders(){
+
+    const headerOptions = {
+      headers:new HttpHeaders({
+      Authorization: 'Bearer ' + localStorage.getItem('token')
+      })
+    };
+    
+    
+    return this.http.get('https://localhost:44336/api/Order/GetOrders',headerOptions)
     .pipe(
       map(        
       ( data: any) => {  

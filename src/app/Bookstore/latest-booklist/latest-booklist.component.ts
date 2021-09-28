@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { IBook } from 'src/app/Models/IBook.interface';
+import { BookDisplayService } from '../services/book-display.service';
 
 @Component({
   selector: 'app-latest-booklist',
@@ -7,37 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LatestBooklistComponent implements OnInit {
 
-  LatestBookList:Array<any>=[
-    {
-      "bookId":1,
-      "category":"science",
-      "price":500,
-    },
-    {
-      "bookId":5,
-      "category":"science",
-      "price":500,
-    },
-    {
-      "bookId":4,
-      "category":"science",
-      "price":500,
-    },
-    {
-      "bookId":2,
-      "category":"science",
-      "price":500,
-    },
-    {
-      "bookId":2,
-      "category":"science",
-      "price":500,
-    }
-  ]
+  LatestBookList:Array<IBook>=[]
 
-  constructor() { }
+  constructor(private bookDisply:BookDisplayService) { }
 
   ngOnInit(): void {
+    this.bookDisply.getLatestBooks().subscribe(
+      data=>{
+        this.LatestBookList=data;
+      },error=>{
+        console.log(error);
+      }
+    );
   }
 
 }

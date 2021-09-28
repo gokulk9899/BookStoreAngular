@@ -9,7 +9,7 @@
         </div>
     </div>
     
-    
+  
 
     <div class="col-sm-8 p-3 mt-0 mb-3 ">
       <h1><strong>{{data.bookTitle}}</strong></h1>
@@ -32,8 +32,8 @@
         </div>
 
         <div class="container">
-          <button type="button" class="btn btn-success mt-5 mr-3">Buy now</button>
-          <button type="button" class="btn btn-warning mt-5 mr-3">Add to cart</button>
+          <button type="button" class="btn btn-success mt-5 mr-3" (click)="onClickBuyNow()">Buy now</button>
+          <button type="button" class="btn btn-warning mt-5 mr-3" (click)="onClickAddToCart()">Add to cart</button>
         </div>
 
       </div>
