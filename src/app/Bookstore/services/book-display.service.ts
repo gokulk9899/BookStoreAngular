@@ -1,8 +1,9 @@
 import { HttpClient,HttpHeaders,HttpResponse } from '@angular/common/http';
 
 import { Injectable } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import {map} from 'rxjs/operators';
-import { IBook } from 'src/app/Models/IBook.interface';
+import { IBook, IBookRating } from 'src/app/Models/IBook.interface';
 import { ICart } from 'src/app/Models/ICart.interface';
 
 @Injectable({
@@ -13,7 +14,7 @@ export class BookDisplayService {
 
   
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient,private snackBar:MatSnackBar) { }
   
   getBestSellerBooks(){
     return this.http.get('Data/bestSellerBooks.json')
@@ -71,7 +72,7 @@ export class BookDisplayService {
       })
     };
     console.log(orderBook);//logs the data
-    console.log("inga vantan");//logs this too..
+    //console.log("inga vantan");//logs this too..
     // return this.http.get('https://localhost:44336/api/Book/GetLatestBooks');
     
     return this.http.post('https://localhost:44336/api/Order/AddToCart',orderBook,headerOptions).subscribe(
@@ -84,9 +85,21 @@ export class BookDisplayService {
         }
       }
     );
-    
-    
-  }
+   }
+
+   updateRating(rateBook:IBookRating){
+    return this.http.patch('https://localhost:44336/api/Book/UpdateBook',rateBook).subscribe(
+      {
+        next:data=>{
+          console.log(data);
+        },
+        error:error=>{
+          console.log(error);
+        }
+      }
+    );
+
+   }
 
 
 }

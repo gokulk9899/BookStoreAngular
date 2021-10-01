@@ -1,13 +1,29 @@
-
+<mat-dialog-content>
 <div class="row">
     <div class="col-sm-4">
-        <div class="card" style="height: 16rem;">
+        <div class="card" style="height: 14rem;">
             <img  src="assets\Images\bookFrontPage.jpg" class="card-img-top overflow-hidden" style="height: 18rem;"  alt="..."  >
         </div>
-        <div class="p-3 mb-3">
-          <h1><p><strong>Price: </strong>{{data.price}}</p></h1>
+        <div style="text-align: center; margin-top: auto;">
+          <h2><p><strong>Price: </strong>{{data.price}}</p></h2>
         </div>
-    </div>
+        <div>
+          <div class="row">
+            <div class="col-sm-12" style="text-align: center;">
+              <!-- <h4><p><strong>Rating: </strong>{{value}}</p></h4> -->
+            </div>
+            <div class="col-sm-6">
+              <h4><p><strong>Rating: </strong>{{value}}</p></h4>
+              
+              <mat-slider thumbLabel  [displayWith]="formatLabel" [(ngModel)]="value" [disabled]="!checkLoggedIn()" (change)="onSliderChange($event)"
+              tickInterval="1000"  step="1"  min="0"  max="5"  aria-label="units"></mat-slider>
+            </div>
+            <div class="col-sm-6">
+              <button class="btn btn-danger btn-sm"[disabled]="!checkSlideChange" (click)="updateRating()">Like</button>
+            </div>
+          </div>
+        </div>
+        </div>
     
   
 
@@ -41,19 +57,4 @@
 
     </div>
 </div>
-
-
-<!--   
-<div>
-  
-    <div class="card" style="width: 50px; height: 50px;" >
-        <img  src="assets\Images\bookFrontPage.jpg" class="card-img-top"  alt="..." >
-        <div class="card-body p-1">
-        <p class="card-text">{{data.bookId}}</p>
-        <p class="card-text">{{data.category}}</p>
-        <p class="card-text">{{data.price}}</p>
-      </div>
-    </div>
-</div>
-
--->
+</mat-dialog-content>

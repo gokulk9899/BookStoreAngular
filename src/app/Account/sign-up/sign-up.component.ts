@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { AccountService } from '../services/account.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { AccountService } from '../services/account.service';
 })
 export class SignUpComponent implements OnInit {
   registerationForm!: FormGroup;
-  constructor(private createUser:AccountService) { }
+  constructor(private createUser:AccountService,private snackBar:MatSnackBar) { }
 
   ngOnInit(): void {
     this.registerationForm=new FormGroup(
@@ -31,6 +32,7 @@ export class SignUpComponent implements OnInit {
         console.log(error);
       }
     );
+    this.snackBar.open("Signed Up SuccessFully!","",{duration:3000})
   }
 
 }

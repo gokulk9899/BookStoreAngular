@@ -14,7 +14,7 @@ import { BookDetailsComponent } from './Bookstore/book-details/book-details.comp
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
-
+import {MatSliderModule} from '@angular/material/slider';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
@@ -30,6 +30,7 @@ import { UserCartService } from './Cart/services/user-cart.service';
 import { AccountService } from './Account/services/account.service';
 import { SearchResultsComponent } from './NavBar/search-results/search-results.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { NavBarService } from './NavBar/services/nav-bar.service';
 
 
 
@@ -66,6 +67,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     FormsModule,
     ReactiveFormsModule,
     MatSnackBarModule,
+    MatSliderModule
   ],
   entryComponents:[
     BookDetailsComponent
@@ -74,7 +76,9 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     BookDisplayService,
     UserCartService,
     AccountService,
-    NavBarComponent
+    NavBarComponent,
+    NavBarService,
+    SearchResultsComponent
   ],
   bootstrap: [AppComponent]
 })

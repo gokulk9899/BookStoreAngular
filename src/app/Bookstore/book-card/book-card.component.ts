@@ -25,7 +25,8 @@ export class BookCardComponent implements OnInit {
     dialogBoxConfig.width='600px';
     dialogBoxConfig.height='400px';
     dialogBoxConfig.data=this.book_name;
-    this.dialogBox.open(BookDetailsComponent,dialogBoxConfig);
+    let dialogRef = this.dialogBox.open(BookDetailsComponent,dialogBoxConfig);
+
   }
 
 }

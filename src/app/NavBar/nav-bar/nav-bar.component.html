@@ -26,8 +26,8 @@
          
         <li>
         <form (ngSubmit)='(onSubmit())' #Search="ngForm" class="d-flex">
-          <input class="form-control me-2" style="width:430px" ngModel name="search" type="search" placeholder="Enter Book or Author Name" aria-label="Search" required>
-          <button [disabled]="!Search.valid" class="btn btn-outline-success" type="submit"routerLink='/searchResults' >Search</button>
+          <input class="form-control me-2" style="width:430px" ngModel name="searchBook" type="search" placeholder="Enter Book or Author Name" aria-label="Search" required>
+          <button [disabled]="!Search.valid" class="btn btn-outline-success" type="submit">Search</button>
         </form>
         </li>
       </ul>
@@ -45,3 +45,4 @@
       </div>
     </div>
   </nav>
+

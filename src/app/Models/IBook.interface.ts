@@ -10,3 +10,18 @@ export interface IBook{
     uploadTime: any
 }
 
+export interface IBookUpload{
+    bookTitle: string,
+    authorName: string,
+    category: string,
+    details: string,
+    price: number,
+    image?: string,
+}
+
+export interface IBookRating{
+    bookId: number,
+    rating: number
+}
+
+

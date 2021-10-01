@@ -1,1 +1,70 @@
-<p>upload-book works!</p>
+<div class="card" style="height:fit-content">
+    <div class="card-header">
+        Upload Book
+    </div>
+    <div class="card-body">
+        <form [formGroup]="uploadbookForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+            <div class="col-sm-3 mt-5">
+                <div class="card p-3" style="width: 10rem;" >
+                      <img  src="assets\Images\bookFrontPage.jpg" class="card-img-top" alt="..." >
+                      <div class="card-body p-1">
+                        <p class="card-text"><strong>Price: </strong>choose</p>
+                     </div>
+                </div>
+            </div>
+
+
+            <div class="col-sm-9 p-1">
+            
+                    <!-- [bookTitle authorName details price category file] -->
+                <div class="form-group col-12">
+                <label for="bookTitle">BookTitle</label>
+                <input type="text" class="form-control" formControlName="bookTitle">
+                </div>
+  
+                <div class="form-group col-12">
+                    <label for="authorName">Author Name</label>
+                    <input type="text" class="form-control" formControlName="authorName">
+                </div>
+                
+                <div class="form-group col-12">
+                    <label for="details">Details</label>
+                    <textarea type="text" class="form-control" formControlName="details"></textarea>
+                </div>
+            
+                <div class="form-group col-12">
+                <div class="row">
+                    <div class="form-group col-sm-6">
+                        <label for="price">Price</label>
+                        <input type="number" class="form-control" formControlName="price">
+                    </div>  
+                
+
+                    <div class="form-group p-4 col-sm-6">
+                        <select class="form-select" aria-label=".form-select-sm example" formControlName="category">
+                            <option selected>Select Cetegory</option>
+                            <option value="comics">comics</option>
+                            <option value="fiction">fiction</option>
+                            <option value="science">science</option>
+                        </select>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            <div class="col-sm-12">
+                <div class="form-group">
+                    <label for="file">File</label>
+                    <!-- <input formControlName="file" id="file" type="file" class="form-control"> -->
+                    <input id="file" formControlName="image" type="file" class="form-control">
+                </div>
+            </div>
+
+            <div class="col-sm-12 text-center">
+                <button  type="submit" class="btn btn-primary">submit</button>
+            </div>
+        </div>
+        </form>
+    </div>
+  </div>
