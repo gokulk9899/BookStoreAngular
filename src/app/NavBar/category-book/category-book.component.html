@@ -1,0 +1,22 @@
+<div class="container">
+
+
+    <div class="dropdown" >
+        <select class="custom-select custom-select-lg text-light bg-dark" [(ngModel)]="model" >
+            <option *ngFor="let item of categoryList" [ngValue]="item">{{item}}</option>
+            <option selected>Category</option> 
+        </select>
+    </div>
+
+    
+
+<div class="row">
+  <div  *ngFor="let book of bookList | category:model" class="shawdow-lg col-sm-2 p-4"> 
+    <app-book-card [book_name]="book"></app-book-card>
+  </div>
+</div>
+
+
+</div>
+
+

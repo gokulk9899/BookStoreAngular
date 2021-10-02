@@ -40,4 +40,20 @@ export class NavBarService {
       )
     );
   }
+
+  getAllBooks(){
+    //return this.http.get('Data/bestSellerBooks.json')
+    return this.http.get('https://localhost:44336/api/Book/GetLatestBooks')
+    .pipe(
+      map(        
+      ( data: any) => {  
+            const booksList:Array<IBook> = [];
+            for(var item of data){
+                booksList.push(item);
+            }
+            return booksList;
+          }
+      )
+    );
+  }
 }

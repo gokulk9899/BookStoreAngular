@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 import { NavBarService } from '../services/nav-bar.service';
 import { IBook } from 'src/app/Models/IBook.interface';
 import { SearchResultsComponent } from '../search-results/search-results.component';
+import {MatSelectModule} from '@angular/material/select';
+import { CategoryBookComponent } from '../category-book/category-book.component';
 
 @Component({
   selector: 'app-nav-bar',
@@ -20,6 +22,8 @@ export class NavBarComponent implements OnInit {
   @ViewChild('Search')
   searchBook!:NgForm;
 
+ 
+
   constructor(
     private loginDialogBox:MatDialog,
     private signUpDialogBox:MatDialog,
@@ -29,12 +33,12 @@ export class NavBarComponent implements OnInit {
     ) { }
 
 
-  
-  fetchedBooks:Array<IBook>=[]
+
 
   ngOnInit(): void {
-    
+        
   }
+
 
   
   onSubmit(){

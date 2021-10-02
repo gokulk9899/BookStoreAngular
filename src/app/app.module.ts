@@ -31,6 +31,8 @@ import { AccountService } from './Account/services/account.service';
 import { SearchResultsComponent } from './NavBar/search-results/search-results.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { NavBarService } from './NavBar/services/nav-bar.service';
+import { CategoryPipe } from './Pipes/category.pipe';
+import { CategoryBookComponent } from './NavBar/category-book/category-book.component';
 
 
 
@@ -51,7 +53,9 @@ import { NavBarService } from './NavBar/services/nav-bar.service';
     SignUpComponent,
     CartComponent,
     UploadBookComponent,
-    SearchResultsComponent
+    SearchResultsComponent,
+    CategoryPipe,
+    CategoryBookComponent
   ],
   imports: [
     BrowserModule,
