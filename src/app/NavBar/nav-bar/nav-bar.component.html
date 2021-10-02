@@ -12,17 +12,11 @@
           <li class="nav-item">
             <a class="nav-link" routerLinkActive="active" routerLink="/bookStore">Bookstore</a>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Categories
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" routerLink="/categoryResults">Categories</a>
           </li>
+          
+          
          
         <li>
         <form (ngSubmit)='(onSubmit())' #Search="ngForm" class="d-flex">
@@ -31,13 +25,14 @@
         </form>
         </li>
       </ul>
+
         <form class="d-flex">
             <button *ngIf="loggedIn()" type="button" class="btn btn-link m-3 text-decoration-none" (click)="openUploadBox()">Upload</button>
             <button *ngIf="loggedIn()" class="btn btn-link m-3 text-decoration-none" type="button" routerLink="/addCart">Cart</button>
             <button *ngIf="!loggedIn()" class="btn btn-sm btn-outline-secondary m-3" type="button" (click)="openLoginBox()">Login</button>
             <button *ngIf="!loggedIn()" class="btn btn-sm btn-outline-secondary m-3" type="button" (click)="openSignUpBox()">SignUp</button>
             <label *ngIf="loggedIn()" type="text" class=" m-3 p-2">Welcome! {{loggedInUserName}}</label>
-            <!-- <label>Welcome! {{loggedInUserName}}</label> -->
+        
             <button *ngIf="loggedIn()" class="btn btn-sm btn-outline-secondary m-3" type="button" (click)="logoutUser()">Logout</button>
        
         </form>
