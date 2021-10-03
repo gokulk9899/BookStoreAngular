@@ -5,8 +5,8 @@ export interface IBook{
     category: string,
     details: string,
     price: number,
-    rating?: number,
-    image?: string,
+    rating: number,
+    image: string,
     uploadTime: any
 }
 
@@ -16,7 +16,7 @@ export interface IBookUpload{
     category: string,
     details: string,
     price: number,
-    image?: string,
+    image: string,
 }
 
 export interface IBookRating{

@@ -1,11 +1,11 @@
-<mat-dialog-content>
+
 <div class="row">
     <div class="col-sm-4">
         <div class="card" style="height: 14rem;">
-            <img  src="assets\Images\bookFrontPage.jpg" class="card-img-top overflow-hidden" style="height: 18rem;"  alt="..."  >
+            <img  [src]="data.image" class="card-img-top overflow-hidden" style="height: 18rem;" >
         </div>
         <div style="text-align: center; margin-top: auto;">
-          <h2><p><strong>Price: </strong>{{data.price}}</p></h2>
+          <h2><p><strong>Price: </strong>{{data.price | currency:'INR':'symbol-narrow'}}</p></h2>
         </div>
         <div>
           <div class="row">
@@ -41,7 +41,7 @@
           <p>{{data.details}}</p>     
         </div>
         <div class="col-sm-6">
-          <p><strong>Auhtor Name:</strong></p>
+          <p><strong>Author Name:</strong></p>
         </div>
         <div class="col-sm-6">
           <p>{{data.authorName}}</p>
@@ -57,4 +57,4 @@
 
     </div>
 </div>
-</mat-dialog-content>
+

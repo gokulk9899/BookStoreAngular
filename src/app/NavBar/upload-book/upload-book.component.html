@@ -4,12 +4,12 @@
     </div>
     <div class="card-body">
         <form [formGroup]="uploadbookForm" (ngSubmit)="onSubmit()">
-        <div class="row">
+        <div class="row" >
             <div class="col-sm-3 mt-5">
                 <div class="card p-3" style="width: 10rem;" >
-                      <img  src="assets\Images\bookFrontPage.jpg" class="card-img-top" alt="..." >
+                      <img  [src]="imgSrc" class="card-img-top" >
                       <div class="card-body p-1">
-                        <p class="card-text"><strong>Price: </strong>choose</p>
+                        <p class="card-text"><strong>Price: </strong>{{uploadbookForm.value['price'] | currency:'INR':'symbol-narrow'}}</p>
                      </div>
                 </div>
             </div>
@@ -57,12 +57,12 @@
                 <div class="form-group">
                     <label for="file">File</label>
                     <!-- <input formControlName="file" id="file" type="file" class="form-control"> -->
-                    <input id="file" formControlName="image" type="file" class="form-control">
+                    <input id="file" accept="image/*" formControlName="image" type="file" class="form-control" (change)="showPreview($event)">
                 </div>
             </div>
 
             <div class="col-sm-12 text-center">
-                <button  type="submit" class="btn btn-primary">submit</button>
+                <button  type="submit" class="btn btn-primary float-right">submit</button>
             </div>
         </div>
         </form>

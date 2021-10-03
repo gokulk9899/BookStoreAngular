@@ -1,12 +1,12 @@
 <div>
-  
-    <div class="card" style="width: 10rem;height: auto;" >
+  <!-- style="width: 10rem;height: 16rem;" -->
+    <div class="card card-img-top shadow bg-white rounded"  >
       <!-- <a routerLink="/bookDetails/{{book_name.bookId}}"> -->
-        <img  src="assets\Images\bookFrontPage.jpg" class="card-img-top" (click)="openDialogBox()" alt="..." >
+        <img [src]= "book_name.image" class="card-img-top overflow-hidden" style="height: 18rem;" (click)="openDialogBox()" alt="..." >
          
       <!-- </a> -->
         <div class="card-body p-1">
-        <p class="card-text"><strong>Price: </strong>{{book_name.price}}</p>
+        <p class="card-text"><strong>Price: </strong>{{book_name.price | currency:'INR':'symbol-narrow'}}</p>
       </div>
     </div>
 </div>

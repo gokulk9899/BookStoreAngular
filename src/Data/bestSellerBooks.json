@@ -7,7 +7,7 @@
     "details": "unknnown",
     "price": 10,
     "rating": null,
-    "image": "string.jpg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/bookphotostorage.appspot.com/o/comics%2FIMG_20190823_195952.jpg_1633250880898?alt=media&token=482ebc48-5aea-434e-8bf1-6b706ddf4086",
     "uploadTime": "2021-09-23T11:13:58.6893623"
   },
   {
@@ -29,7 +29,7 @@
     "details": "book",
     "price": 90,
     "rating": 3,
-    "image": "image.jpg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/bookphotostorage.appspot.com/o/comics%2FIMG_20190819_103932.jpg_1633251895326?alt=media&token=b16a6cd5-b0b9-4ea4-9237-356588d4c16a",
     "uploadTime": "2021-09-22T18:32:10.279"
   },
   {

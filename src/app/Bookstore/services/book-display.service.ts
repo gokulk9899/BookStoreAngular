@@ -17,8 +17,8 @@ export class BookDisplayService {
   constructor(private http:HttpClient,private snackBar:MatSnackBar) { }
   
   getBestSellerBooks(){
-    return this.http.get('Data/bestSellerBooks.json')
-    //return this.http.get('https://localhost:44336/api/Book/GetBestSellerBooks')
+    //return this.http.get('Data/bestSellerBooks.json')
+    return this.http.get('https://localhost:44336/api/Book/GetBestSellerBooks')
     .pipe(
       map(        
       ( data: any) => {  

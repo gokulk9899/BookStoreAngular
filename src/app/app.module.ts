@@ -33,6 +33,11 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { NavBarService } from './NavBar/services/nav-bar.service';
 import { CategoryPipe } from './Pipes/category.pipe';
 import { CategoryBookComponent } from './NavBar/category-book/category-book.component';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { environment } from 'src/environments/environment';
+import { HomeComponent } from './Home/home/home.component';
+
 
 
 
@@ -55,7 +60,8 @@ import { CategoryBookComponent } from './NavBar/category-book/category-book.comp
     UploadBookComponent,
     SearchResultsComponent,
     CategoryPipe,
-    CategoryBookComponent
+    CategoryBookComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -71,7 +77,9 @@ import { CategoryBookComponent } from './NavBar/category-book/category-book.comp
     FormsModule,
     ReactiveFormsModule,
     MatSnackBarModule,
-    MatSliderModule
+    MatSliderModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireStorageModule 
   ],
   entryComponents:[
     BookDetailsComponent
